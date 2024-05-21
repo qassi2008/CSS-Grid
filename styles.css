@@ -1,0 +1,237 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    background-color: floralwhite;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+    "header header header header"
+    "main1 main2 main2 aside"
+    "main3 main3 main4 aside"
+    "footer footer footer footer";
+    padding: 10px;
+    height: 100vh;
+}
+
+.grid-header {
+    grid-area: header;
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.grid-main {
+        padding: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+#main1, #main2, #main3, #main4, aside, footer, header{
+    font-size: 2rem;
+    font-weight: bolder;
+    box-shadow: 2px 4px 7px #000;
+}
+#main1, #main2, #main3, #main4, aside{
+    border-radius: 10px;
+}
+#main1 {
+    grid-area: main1;
+    background-color: green;
+}
+
+#main2 {
+    grid-area: main2;
+    background-color: dodgerblue;
+    color: #000;
+}
+
+#main3 {
+    grid-area: main3;
+    background-color: darkorange;
+}
+
+#main4 {
+    grid-area: main4;
+    background-color: yellow;
+    padding: 20px;
+    color: black;
+}
+.grid-aside {
+    grid-area: aside;
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+    color: #000;
+}
+.grid-footer {
+    grid-area: footer;
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+"header"
+"main1"
+"main2"
+"main3"
+"main4"
+"aside"
+"footer";
+    }
+}
+@media (max-width: 368px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+"header"
+"main1"
+"main2"
+"main3"
+"main4"
+"aside"
+"footer";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Example 1: Classic Two-Column Layout with Header and Footer
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+    padding: 10px;
+    height: 100vh;
+}
+
+.grid-header {
+    grid-area: header;
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid-main {
+    grid-area: main;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#main1, #main2, #main3, #main4 {
+    /* All main sections are now combined into one main area
+    display: none;
+}
+
+#main1 { /* Only Main 1 is displayed
+    display: flex;
+}
+/*
+.grid-aside {
+    grid-area: aside;
+    background-color: magenta;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}*/
+/*
+.grid-footer {
+    grid-area: footer;
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+*/
+/*Example 3: Full-Width Header and Footer with Centralized Content
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+        "header header header header header header"
+        "main1 main1 main2 main2 main2 main2"
+        "main3 main3 main3 main4 main4 main4"
+        "footer footer footer footer footer footer";
+    padding: 10px;
+    height: 100vh;
+}
+
+.grid-header {
+    grid-area: header;
+    background-color: #444;
+}
+
+#main1, #main2, #main3, #main4 {
+     Adjusting the grid areas for each main section
+}
+
+#main1 {
+    grid-area: main1;
+    background-color: palevioletred;
+}
+
+#main2 {
+    grid-area: main2;
+    background-color: green;
+}
+
+#main3 {
+    grid-area: main3;
+    background-color: burlywood;
+}
+
+#main4 {
+    grid-area: main4;
+    background-color: deepskyblue;
+}
+
+.grid-aside {
+    The aside is not displayed in this layout
+    grid-area: aide;
+    display: none;
+    background-color: blueviolet;
+}
+
+.grid-footer {
+    grid-area: footer;
+    background-color: #444;
+}
+*/
